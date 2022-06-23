@@ -5,61 +5,69 @@
 // SetPassword – Установить пароль; SetName – Установить имя
 // WriteName – вывести имя после ввода пароля; Exit – выход
 
-
-
-//string stop = "exit";
-string text = "";
-int[] password = new int[4];
-string name = "";
-
-
-Console.Clear();
+string text = " ";
+string password = " **** ";
+string name = " ---- ";
 
 for (; text != "exit";)
 {
-    if (text == "Help")
+    ListCommands(text);
+    SetName(text, name);
+    SetPassword(text, password);
+    WriteName(text, password); 
+
+    Console.Write("Введите команду: ");
+    text = Console.ReadLine();
+}  
+
+
+void WriteName(string a, string b)
+{
+    if (a == "WriteName")
+    {
+        Console.Write("Введите пароль: ");
+        string c = Console.ReadLine();
+
+        if (b == c)
+        {
+            Console.WriteLine("имя: " + name);
+            return;
+        }
+        else
+        {
+            Console.WriteLine("Неверный пароль");
+        } 
+    }
+}
+
+void SetPassword(string a, string b)
+{
+    if (a == "SetPassword")
+    {
+        Console.Write("Введите пароль: ");
+        b = Console.ReadLine();
+        Console.WriteLine($"Пароль сохранён");
+    }
+}
+
+void SetName(string a, string b)
+{
+    if (a == "SetName")
+    {
+        Console.Write("Введите имя: ");
+        b = Console.ReadLine();
+        Console.WriteLine($"Имя '{b}' сохранено");
+    }
+}
+
+void ListCommands(string a)
+{
+    if (a == "Help")
     {
         Console.WriteLine("SetName - Установить Имя");
         Console.WriteLine("SetPassword - Установить Пароль");
         Console.WriteLine("WriteName - Вывести имя после ввода пароля");
         Console.WriteLine("Help - Вывести список команд");
         Console.WriteLine("Edit - Выход");
-    }
-    if (text == "SetPassword")
-    {
-        int[] password = new int[4];
-        Console.WriteLine("Введите пароль (4 цифры ): **** ");
-        UserArray(password);
-    }
-    if (text == "WriteName")
-    {   
-        int[] password2 = new int[4];
-        Console.WriteLine("Введите пароль: **** ");
-        UserArray(password2);
-        for (int i = 0, j = 0; i < 4; i++)
-        {
-            if (password[i] == password2[j])
-            {
-            Console.Write(name);
-            }
-        }
-    }
-    if (text == "SetName")
-    {
-        Console.Write("Введите имя: ");
-        name = Console.ReadLine();
-    } 
-   
-    Console.Write("Введите команду: ");
-    text = Console.ReadLine();
-}  
-
-
-void UserArray(int[] num) // пользовательский ввод
-{
-    for (int i = 0; i < num.Length; i++)
-    {
-        Console.Write($"{i + 1}-ю цифрa: ");
-        num[i] = Convert.ToInt32(Console.ReadLine());
     }
 }
