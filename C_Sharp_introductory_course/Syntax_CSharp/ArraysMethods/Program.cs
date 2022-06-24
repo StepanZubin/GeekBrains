@@ -44,8 +44,26 @@ ReversArray(numbers);
 
 void ReversArray(int[] num)
 {
-    for (int i = n - 1; i > -1; i--)
+    for (int i = n - 1; i >= 0; i--)
     {
          Console.Write(num[i] + " ");
     }
+}
+
+
+//рандомный набор массива + вывод по типу [1, 2, ... 6, 7]
+void SetArray(int[] num) 
+{
+    Console.Write("[");
+    for (int i = 0; i < num.Length; i++)
+    {
+        num[i] = new Random().Next(10);
+        Console.Write(num[i]);
+
+        if (i != num.Length - 1)
+        { 
+            Console.Write(", ");
+        }   
+    }
+    Console.Write("]");
 }
