@@ -5,7 +5,6 @@ int[] numbers = new int[n];
 
 
 // пользовательский ввод массива
-int[] numbers;
 UserArray(numbers);
 
 void UserArray(int[] num) 
@@ -19,7 +18,6 @@ void UserArray(int[] num)
 
 
 // рандомный ввод массива
-int[] numbers;
 SetArray(numbers);
 
 void SetArray(int[] num) 
@@ -32,8 +30,7 @@ void SetArray(int[] num)
 
 
 // вывод массива
-int[] numRandom;
-OutArray(numRandom);
+OutArray(number);
 
 void OutArray(int[] num) 
 {
@@ -43,7 +40,6 @@ void OutArray(int[] num)
 
 
 // вывод массива в обратном порялдке
-int[] numbers;
 ReversArray(numbers);
 
 void ReversArray(int[] num)
