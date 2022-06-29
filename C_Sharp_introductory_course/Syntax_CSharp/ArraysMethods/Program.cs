@@ -67,3 +67,32 @@ void SetArray(int[] num)
     }
     Console.Write("]");
 }
+
+
+//Рандомный набор массива + вывод
+int N = Input("Введите число: ");
+int[] numbers = new int[N];
+SetArray(numbers);
+
+int[] SetArray(int [] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(10);
+        Console.Write(array[i] + " ");
+    }
+    return array;
+}   
+
+
+//Копия заданного массива с помощью 
+//поэлементного копирования
+int[] CopyArray(int[] array)
+{
+    int[] copyArray = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        copyArray[i] = array[i];
+    }
+    return copyArray; 
+}
