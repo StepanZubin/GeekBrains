@@ -6,7 +6,7 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-
+Console.Clear();
 int m = Input("Enter m: ");
 int n = Input("Enter n: ");
 int[,] numbers = new int[m, n];

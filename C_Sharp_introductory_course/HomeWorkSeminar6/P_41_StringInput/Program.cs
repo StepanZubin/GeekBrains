@@ -25,7 +25,7 @@ for (int i = 0; i < line.Length; i++)
 
     while (line[i] != ',')
     {
-        if (i != line.Length - 1) // т.к. последняя групаа char без ","
+        if (i != line.Length - 1) // т.к. последняя группа char без ","
         {
             temp += line[i]; // можно: line[i].ToString(); 
             i++;

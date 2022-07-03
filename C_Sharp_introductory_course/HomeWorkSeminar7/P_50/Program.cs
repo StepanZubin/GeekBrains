@@ -7,6 +7,7 @@
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
+Console.Clear();
 int x = Input("Enter row index from 0-9: ");
 int y = Input("Enter column index from 0-9: ");
 int[,] numbers = new int[10, 10];
