@@ -17,4 +17,70 @@
 // Группа 5: 16 24 36 40
 // Группа 6: 32 48
 
+Console.Write("Enter N: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
+int[] numbers = new int[n];
+SetArray(numbers);
+
+int count = 0; //счётчик групп
+
+for (int i = 0; i < numbers.Length; i++) 
+{
+    if (numbers[i] != 0)
+    {
+        int[] numbersGroup = new int[numbers.Length];
+        int indexGroup = 0; //индекс для массива numbersGroup
+
+        for (int j = i; j < numbers.Length; j++) //проверяем, что не делиться на первое число и записываем в массив numbersGroup
+        {
+            if (numbers[j] % numbers[i] != 0 || numbers[j] / numbers[i] == 1) 
+            {
+                numbersGroup[indexGroup] = numbers[j];
+                indexGroup++;
+            }
+
+        }
+
+        for (int k = 1; k < numbersGroup.Length; k++) //проверяем в получившемся массиве, чтобы числа между собой не делились нацело и обнуляем цифру, кот. делится нацело
+        {
+            for (int l = k + 1; l < numbersGroup.Length; l++)
+            {
+                if (numbersGroup[k] != 0 && numbersGroup[l] % numbersGroup[k] == 0) 
+                {
+                    numbersGroup[l] = 0;
+                }
+            }
+        }
+
+        for (int f = 0; f < numbers.Length; f++)
+        {
+            for (int m = 0; m < numbersGroup.Length; m++)
+            {
+                if (numbersGroup[m] == numbers[f]) // обнуляем в основном массиве (numbers) то, что записали в новый (numbersGroup)
+                {
+                    numbers[f] = 0;
+                }
+            }
+        }
+
+        Console.Write($"Group {++count}: ");
+        for (int g = 0; g < numbersGroup.Length; g++) //вывод в консоль групп
+        {
+            if (numbersGroup[g] != 0) //убираем нулевые значения
+            {
+                Console.Write(numbersGroup[g] + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+
+}
+
+void SetArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = i + 1;
+    }
+}
