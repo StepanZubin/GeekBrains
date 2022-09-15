@@ -14,10 +14,10 @@ def number():
 
 num_N = number()
 
-list = []
+list_factorial = []
 num_list = 1
 for i in range(1, num_N + 1): #(1*1, 1*2, 2*3, 6*4, 24*...)
     num_list *= i
-    list.append(num_list)
+    list_factorial.append(num_list)
 
-print('N =', num_N,' → ', list)
+print('N =', num_N,' → ', list_factorial)

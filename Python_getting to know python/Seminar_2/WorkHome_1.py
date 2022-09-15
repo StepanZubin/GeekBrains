@@ -12,14 +12,15 @@ def number():
         print('Incorrect input!')
         return number() 
 
-num_N = str(number())
-sum = 0
+if __name__ == '__main__':
+    num_N = str(number())
+    sum = 0
 
-for i in range(len(num_N)):
-    if num_N[i] != '.' and num_N[i] != '-':
-        sum += int(num_N[i])
-    
-print(num_N, '->', sum)
+    for i in range(len(num_N)):
+        if num_N[i] != '.' and num_N[i] != '-':
+            sum += int(num_N[i])
+        
+    print(num_N, '->', sum)
 
 
 
