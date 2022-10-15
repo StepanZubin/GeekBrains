@@ -20,7 +20,7 @@ public class HomeWorkt_3 {
         return n;
     }
 
-    // только целочисленные операции13
+    // только целочисленные операции
     public static int calculator(int x, int y, char s) {
         int res = 0;
         if (s == '+') {res = x + y;}
