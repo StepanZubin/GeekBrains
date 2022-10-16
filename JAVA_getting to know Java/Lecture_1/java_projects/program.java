@@ -1,3 +1,5 @@
+import java.util.concurrent.ForkJoinPool;
+
 /**
  * program
  */
@@ -235,24 +237,286 @@
 //     }
 // }
 
-// Некоторые примитивы
-import java.util.Scanner;
-public class program {
-    public static void main(String[] args) {
-        Scanner iScanner = new Scanner(System.in); // определили экземляр сканера
-        System.out.printf("int a: ");  // ожидаем получение integer-а 
-        int x = iScanner.nextInt();
-        System.out.printf("double a: ");
-        double y = iScanner.nextDouble();
-        System.out.printf("%d + %f = %f", x, y, x + y);  // вывод в консоль
-        iScanner.close();
-    }
-}
+// // Некоторые примитивы
+// import java.util.Scanner;
+// public class program {
+//     public static void main(String[] args) {
+//         Scanner iScanner = new Scanner(System.in); // определили экземляр сканера
+//         System.out.printf("int a: ");  // ожидаем получение integer-а 
+//         int x = iScanner.nextInt();
+//         System.out.printf("double a: ");
+//         double y = iScanner.nextDouble();
+//         System.out.printf("%d + %f = %f", x, y, x + y);  // вывод в консоль
+//         iScanner.close();
+//     }
+// }
+
+
+// // Проверка на соответствие получаемого типа
+// import java.util.Scanner;
+// public class program {
+//     public static void main(String[] args) {
+//         Scanner iScanner = new Scanner(System.in); // определили экземляр сканера
+//         System.out.printf("int a: ");  // ожидаем получение integer-а 
+//         boolean flag = iScanner.hasNextInt(); // если возможно считываем integer
+//                                     // во flag получаем значение true либо false
+//         System.out.println(flag);  // вывод в консоль
+//         iScanner.close();
+//     }
+// }
 
 
 
 
+// // Форматированный вывод
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 1, b = 2;
+//         int c = a + b;
+//         String res = a + " + " + b + " = " + c;
+//         System.out.println(res);  // 1 + 2 = 3
+//     }
+// }
 
 
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 1; 
+//         String b = "slovo";
+//         String c = a + b;  // даёт просадку в конкотинации (лучше так не делать!)
+//         String res = a + " + " + b + " = " + c;
+//         System.out.println(res);  // 1 + slovo = 1slovo
+//     }
+// }
+
+
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 1, b = 2;
+//         int c = a + b;
+//         String res = String.format("%d + %d = %d \n", a, b, c);  // если надо кудато положить
+//         System.out.printf("%d + %d = %d \n", a, b, c);
+//         System.out.println(res);  // 1 + 2 = 3
+//     }
+// }
+
+
+// //Вывод количества знаков после запятой (не работает! должным образом)
+// public class program {
+//     public static void main(String[] args) {
+//         float pi = 3.1415f;
+//         System.out.printf("%f\n", pi);  // 3.141500
+//         System.out.printf("%2f\n", pi);  // 3.14
+//         System.out.printf("%3f\n", pi);  // 3.141
+//         System.out.printf("%e\n", pi);  // 3.141500e+00
+//         System.out.printf("%2e\n", pi);  // 3.14e+00
+//         System.out.printf("%3e\n", pi);  // 3.141e+00
+//     }
+// }
+
+
+
+// // Область видимости переменных
+// public class program {
+//     public static void main(String[] args) {
+//         {
+//             int a = 222;
+//             System.out.println(a);  // 222 → сработает только в такой структуре
+//         }
+//         int a = 123;
+//         System.out.println(a);  // 123
+//     }
+// }
+
+
+
+// // Управляющие конструкции: условный оператор
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 1;
+//         int b = 2;
+//         int c;
+//         if (a > b) {
+//             c = a;
+//         } else {
+//             c = b;
+//         }
+//         System.out.println(c);  // 2
+//     }
+// }
+
+
+// // Управляющие конструкции: тернарный оператор
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 1;
+//         int b = 2;
+//         int min = a < b ? a : b;  // если условие не выполняется, то вернётся b
+//         System.out.println(min);  // 1
+//     }
+// }
+
+
+// // Управляющие конструкции: оператор выбора switch (код не работает!)
+// public class program {
+//     public static void main(String[] args) {
+//         int mounth = value;  // value - подчёркнуто "красным"
+//         String text = "";
+//         switch (mounth) {
+//             case 1:
+//                 text = "Autumn";
+//                 break;
+            
+//             default
+//                 text = "mistake";
+//                 break;
+//         }
+//         System.out.println(text);
+//         iScanner.close();  // iScanner. - подчёркнуто "красным"
+//     }
+// }
+
+
+// // код не работает!
+// public class program {
+//     public static void main(String[] args) {
+//         int a = 123;
+//         switch (a) {
+//             case 1:
+//             case 2:
+//             case 3:
+//                 System.out.println("a");
+//                 break;
+//             case 4:
+//                 System.out.println('b');
+//                 break;
+//         }
+//     }
+// }
+
+
+
+
+// Циклы
+// количество цифр числа
+// public class program {
+//     public static void main(String[] args) {
+//         int value = 32123;
+//         int count = 0;
+
+//         while (value != 0) {
+//             value /= 10;
+//             count++;
+//         }
+//         System.out.println(count);  // 5
+//     }
+// }
+
+
+// // do while - сначала делает потом проверяет
+// public class program {
+//     public static void main(String[] args) {
+//         int value = 32123;
+//         int count = 0;
+
+//         do {
+//             value /= 10;
+//             count++;
+//         } while (value != 0);
+//         System.out.println(count);  // 5
+//     }
+// }
+
+
+
+// // continue
+// public class program {
+//     public static void main(String[] args) {
+//         for (int i = 0; i < 10; i++) {  // вывод чётных чисел
+//             if (i % 2 != 0) continue;
+//             System.out.println(i);  // 0 2 4 6 8
+//         }
+//     }
+// }
+
+
+// // break
+// public class program {
+//     public static void main(String[] args) {
+//         for (int i = 0; i < 10; i++) {  // вывод до нечётного чисела
+//             if (i % 2 != 0) break;
+//             System.out.println(i);  // 0
+//         }
+//     }
+// }
+
+
+// // Цикл for in (перебор элементов для коллекции)
+// public class program {
+//     public static void main(String[] args) {
+
+//         int[] arr = new int[] {1,2,3,4,5,77};
+//             for (int item : arr) { //работа с локальной переменной item, а не с элементом массива
+//                 System.out.println(item);  // 0
+//             }
+//     }
+// }
+
+
+
+
+// // Работа с файлами. Создание и запись. Дозапись.
+// import java.io.FileWriter;
+// import java.io.IOException;
+
+// public class program {
+//     public static void main(String[] args) {
+//         // Определяем экземпляр класса FileWriter
+//         // В качестве конструктора передаём имя будущего файла и false (дописывать в файл(если его нет - создается новый))
+//         try (FileWriter fw = new FileWriter("J_Lect_1_file.txt", false)) {
+//             fw.write("line 1");
+//             fw.append('\n');
+//             fw.append('2');
+//             fw.append('\n');
+//             fw.write("line 3");
+//             fw.flush();  // принудительная запись методом .flush()
+//         } catch (IOException ex) {
+//             System.out.println(ex.getMessage()); // .getMessage() - просмотр возникшей ошибки
+//         }
+//     }
+// }
+
+
+// // Работа с файлами. Чтение (посимвольно).
+// import java.io.*;
+
+// public class program {
+//     public static void main(String[] args) throws Exception {
+//         FileReader fr = new FileReader("J_Lect_1_file.txt");
+//         int c;
+//         while ((c = fr.read()) != -1) {
+//             char ch = (char) c;
+//             if (ch  == '\n') {
+//                 System.out.print(ch);
+//             } else {
+//                 System.out.print(ch);
+//             }
+//         }
+//     }
+// }
+
+
+// // Работа с файлами. Чтение (построчно).
+// import java.io.*;
+
+// public class program {
+//     public static void main(String[] args) throws Exception {  // throws Exception - может закончиться ошибкой
+//         BufferedReader br = new BufferedReader(new FileReader("J_Lect_1_file.txt"));
+//         String str;
+//         while ((str= br.readLine()) != null) {
+//             System.out.printf("== %s ==\n", str);
+//         }
+//     }
+// }
 
 
