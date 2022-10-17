@@ -1,7 +1,8 @@
 
 
-public class task_5 {
+
+public class HomeWork_3 {
     public static void main(String[] args) {
         
-    }  
+    }
 }
