@@ -1,6 +1,5 @@
 // Напишите метод, который сжимает строку. Пример: вход aaaabbbcdd.
-// Ответ: результат - a4b3cd2 для примера
-// aaabbaa → a3b2a2
+// Ответ: aaabbaa → a3b2a2
 
 public class task_2 {
     public static void main(String[] args) {

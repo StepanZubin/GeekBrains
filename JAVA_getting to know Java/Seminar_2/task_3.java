@@ -14,12 +14,12 @@ public class task_3 {
         }
         return sb.toString();
     }  
-    public static void writeFile (String inpuStrings) {
+    public static void writeFile (String inputStrings) {
         
         try {
             FileWriter fw = new FileWriter("J_S2_cw.txt", false);
             // false - перезапись файла, true - дозапись в файл
-            fw.append(inpuStrings);
+            fw.append(inputStrings);
             fw.flush();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

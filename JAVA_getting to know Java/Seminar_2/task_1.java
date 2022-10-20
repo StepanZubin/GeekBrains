@@ -19,5 +19,6 @@ public class task_1 {
         System.out.println(strN.toString());
     }  
 }
-
+ 
+// очистка консоли путём поднятия вверх видимой области:
 // System.out.print("\033[H\033[2J");
