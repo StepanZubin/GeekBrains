@@ -1,10 +1,10 @@
-окт. 20, 2022 6:23:41 PM HomeWork_4_dop inputInteger
-INFO: ввод 1-го числа: 45
-окт. 20, 2022 6:23:49 PM HomeWork_4_dop inputOperation
-INFO: ввод символа операции: /
-окт. 20, 2022 6:23:51 PM HomeWork_4_dop inputInteger
-INFO: ввод 2-го числа: 9
-окт. 20, 2022 6:23:51 PM HomeWork_4_dop calculator
-INFO: получение результата: 5
-окт. 20, 2022 6:23:51 PM HomeWork_4_dop main
-INFO: выведено в консоль: 45 / 9 = 5
+нояб. 06, 2022 12:21:59 AM HomeWork_4_dop inputInteger
+INFO: ввод 1-го числа: 56
+нояб. 06, 2022 12:22:02 AM HomeWork_4_dop inputOperation
+INFO: ввод символа операции: +
+нояб. 06, 2022 12:22:04 AM HomeWork_4_dop inputInteger
+INFO: ввод 2-го числа: 56
+нояб. 06, 2022 12:22:04 AM HomeWork_4_dop calculator
+INFO: получение результата: 112
+нояб. 06, 2022 12:22:04 AM HomeWork_4_dop main
+INFO: выведено в консоль: 56 + 56 = 112
